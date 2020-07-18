@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/andreperegrina/Would-you-rather/static/css/main.cccf065c.chunk.css",
+    "main.js": "/andreperegrina/Would-you-rather/static/js/main.5ea72318.chunk.js",
+    "main.js.map": "/andreperegrina/Would-you-rather/static/js/main.5ea72318.chunk.js.map",
+    "runtime-main.js": "/andreperegrina/Would-you-rather/static/js/runtime-main.ca3fcf6a.js",
+    "runtime-main.js.map": "/andreperegrina/Would-you-rather/static/js/runtime-main.ca3fcf6a.js.map",
+    "static/css/2.1c89b087.chunk.css": "/andreperegrina/Would-you-rather/static/css/2.1c89b087.chunk.css",
+    "static/js/2.d5bbeea5.chunk.js": "/andreperegrina/Would-you-rather/static/js/2.d5bbeea5.chunk.js",
+    "static/js/2.d5bbeea5.chunk.js.map": "/andreperegrina/Would-you-rather/static/js/2.d5bbeea5.chunk.js.map",
+    "index.html": "/andreperegrina/Would-you-rather/index.html",
+    "precache-manifest.15269a6503dc21235a8d6fde233d6b87.js": "/andreperegrina/Would-you-rather/precache-manifest.15269a6503dc21235a8d6fde233d6b87.js",
+    "service-worker.js": "/andreperegrina/Would-you-rather/service-worker.js",
+    "static/css/2.1c89b087.chunk.css.map": "/andreperegrina/Would-you-rather/static/css/2.1c89b087.chunk.css.map",
+    "static/css/main.cccf065c.chunk.css.map": "/andreperegrina/Would-you-rather/static/css/main.cccf065c.chunk.css.map",
+    "static/js/2.d5bbeea5.chunk.js.LICENSE.txt": "/andreperegrina/Would-you-rather/static/js/2.d5bbeea5.chunk.js.LICENSE.txt",
+    "static/media/semantic.min.css": "/andreperegrina/Would-you-rather/static/media/outline-icons.ef60a4f6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ca3fcf6a.js",
+    "static/css/2.1c89b087.chunk.css",
+    "static/js/2.d5bbeea5.chunk.js",
+    "static/css/main.cccf065c.chunk.css",
+    "static/js/main.5ea72318.chunk.js"
+  ]
+}
