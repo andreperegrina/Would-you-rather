@@ -1,0 +1,70 @@
+.QuestionCard .question-title {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.QuestionCard .answers {
+    min-height: 300px;
+    height: 300px;
+}
+
+
+.QuestionCard .answers .column {
+    height: 100%;
+}
+
+.QuestionCard .answers .column.answer {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+.QuestionCard .answers .divider {
+    z-index: 9 !important;
+}
+
+.QuestionCard .answers .divider:before, .QuestionCard .answers .divider:after {
+    border: none !important;
+}
+
+.QuestionCard .answers .column.answer .VoteCard {
+    height: 100%;
+}
+
+.QuestionCard .answers .column.answer .card > .content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.QuestionCard .answers .column.answer .VoteCard.easter-egg-1 {
+    background-image: url('/rem.jpg');
+    color:white;
+}
+
+.QuestionCard .answers .column.answer .VoteCard.easter-egg-1 .header {
+    color:white;
+}
+.QuestionCard .answers .column.answer .VoteCard.easter-egg-2 {
+    background-image: url('/ram.jpg');
+}
+
+.QuestionCard .answers .column.answer .card > .content > .header {
+    font-size: 2em;
+}
+.QuestionCard .card-header{
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.QuestionCard .card-header .feed{
+    margin-top:0;
+}
+.QuestionCard .card-header .back-button{
+    height: 100%;
+    margin-right: 1rem;
+}
+.QuestionCard .card-header .back-button:hover{
+    cursor: pointer;
+}

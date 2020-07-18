@@ -25,14 +25,9 @@ const Header = ({onClickItem, onClickLogout, active, user = {}}) => {
                onClick={() => handleItemClick('/')}
             />
             <Menu.Item
-               name='messages'
-               active={active === '/messages'}
-               onClick={() => handleItemClick('messages')}
-            />
-            <Menu.Item
-               name='friends'
-               active={active === '/friends'}
-               onClick={() => handleItemClick('friends')}
+               name='Leader board'
+               active={active === '/leaderboard'}
+               onClick={() => handleItemClick('/leaderboard')}
             />
             <Menu.Menu position='right'>
                <Dropdown
