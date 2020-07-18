@@ -61,6 +61,22 @@
 .QuestionCard .card-header .feed{
     margin-top:0;
 }
+.QuestionCard .card-header .feed .event{
+    justify-content: center;
+    align-items: center;
+}
+.QuestionCard .card-header .feed .content{
+    margin-top:0 !important;
+    margin-bottom:0 !important;
+}
+.QuestionCard .card-header .feed .author-name{
+    margin-top:0;
+    margin-bottom:0;
+}
+.QuestionCard .card-header .feed .created-date{
+    margin-top:0!important;
+    margin-bottom:0;
+}
 .QuestionCard .card-header .back-button{
     height: 100%;
     margin-right: 1rem;

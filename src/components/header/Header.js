@@ -20,9 +20,14 @@ const Header = ({onClickItem, onClickLogout, active, user = {}}) => {
       <div>
          <Menu pointing secondary>
             <Menu.Item
-               name='home'
+               name='Home'
                active={active === '/'}
                onClick={() => handleItemClick('/')}
+            />
+            <Menu.Item
+               name='New question'
+               active={active === '/add'}
+               onClick={() => handleItemClick('/add')}
             />
             <Menu.Item
                name='Leader board'

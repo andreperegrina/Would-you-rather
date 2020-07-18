@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import './QuestionCard.css'
 import VoteCard from "./components/vote-card/VoteCard";
+import moment from "moment";
 
 const square = {width: 100, height: 100, top: -50};
 
@@ -51,7 +52,12 @@ const QuestionCard = (props) => {
                      <Feed.Label image={author.avatarURL}/>
                      <Feed.Content>
                         <Feed.Summary>
-                           <a href='/'>{author.name}</a> asks
+                           <div className='author-name'>
+                              <a href='/'>{author.name}</a> asks
+                           </div>
+                           <Card.Meta className='created-date'>
+                              <span className='date'>{moment(question.timestamp).fromNow()}</span>
+                           </Card.Meta>
                         </Feed.Summary>
                      </Feed.Content>
                   </Feed.Event>

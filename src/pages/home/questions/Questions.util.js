@@ -10,6 +10,8 @@ export const filterQuestions = (questions = [], filterBy = 'unanswered', userId)
 
 });
 
+export const orderQuestions = (questions = []) => questions.sort((a, b) => b.timestamp - a.timestamp);
+
 
 export const doesUserVoteInThisQuestion = (question = {}, userId = "") => {
    if (question.optionOne && question.optionOne.votes.includes(userId)) {

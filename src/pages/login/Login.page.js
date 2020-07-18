@@ -19,7 +19,13 @@ class LoginPage extends Component {
       const {users} = this.props;
       if (users[userId]) {
          this.props.authenticate(userId);
+
+         const {location} = this.props;
+         if(location.state && location.state.from) {
+            this.props.history.push(location.state.from);
+         }
       }
+
    };
 
    render() {

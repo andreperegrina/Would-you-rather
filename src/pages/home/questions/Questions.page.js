@@ -1,14 +1,12 @@
 import React, {Component} from 'react';
 import {connect} from "react-redux";
-import {Container, Segment, Card, Form, Radio, Button, Icon} from "semantic-ui-react";
+import {Container, Segment, Card, Form, Radio, Loader, Dimmer} from "semantic-ui-react";
 
 import {convertObjectToArray} from "../../../utils";
 import QuestionCard from "../../../components/question-card/QuestionCard";
-import {filterQuestions} from "./Questions.util";
+import {filterQuestions, orderQuestions} from "./Questions.util";
 
 import './Questions.css'
-import NewQuestionModal from "./components/NewQuestionModal";
-
 import questionActions from "../../../actions/questions.action";
 
 const filterByOptions = [{
@@ -27,26 +25,21 @@ const filterByOptions = [{
 
 class QuestionsPage extends Component {
    state = {
-      filterBy: 'unanswered',
-      isNewQuestionOpen: false
+      filterBy: 'unanswered'
    };
    handleOpenQuestion = (id) => this.props.history.push(`/questions/${id}`);
 
    handleFilterByChange = (e, {value}) => this.setState({filterBy: value});
 
-   handleSubmit = (values) => {
-      this.props.addQuestion(values.optionOne, values.optionTwo);
-      this.openNewQuestion(false);
-   };
-
-   openNewQuestion = (isOpen) => this.setState({isNewQuestionOpen: isOpen});
-
    render() {
-      const {filterBy, isNewQuestionOpen} = this.state;
-      const {questions, users, authenticatedUserId} = this.props;
-      const questionList = filterQuestions(convertObjectToArray(questions), filterBy, authenticatedUserId);
+      const {filterBy} = this.state;
+      const {questions, users, authenticatedUserId, isFetching} = this.props;
+      const questionList = orderQuestions(filterQuestions(convertObjectToArray(questions), filterBy, authenticatedUserId));
       return (
          <Container className='QuestionsPage'>
+            <Dimmer active={isFetching}>
+               <Loader/>
+            </Dimmer>
             <Segment>
                <Segment basic>
                   <Form className='toolbar'>
@@ -64,18 +57,6 @@ class QuestionsPage extends Component {
                               />
                            ))}
                         </Form.Group>
-                        <Form.Field className='right-options'>
-                           <NewQuestionModal
-                              isOpen={isNewQuestionOpen}
-                              onClose={() => this.openNewQuestion(false)}
-                              onSubmit={this.handleSubmit}
-                              trigger={
-                                 <Button icon labelPosition='left' onClick={() => this.openNewQuestion(true)}>
-                                    <Icon name='plus'/>
-                                    New Question
-                                 </Button>
-                              }/>
-                        </Form.Field>
                      </Form.Group>
                   </Form>
                </Segment>
@@ -98,6 +79,7 @@ const mapStateToProps = (state) => {
    const {user = {}} = state.authentication;
    return {
       users,
+      isFetching: state.questions.isFetching,
       questions: state.questions.data,
       authenticatedUserId: user.id
    }

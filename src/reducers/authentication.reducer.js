@@ -1,4 +1,4 @@
-export default (state = {user: {id: 'sarahedo'}}, action = {}) => {
+export default (state = {user: undefined}, action = {}) => {
    const {error, type, response} = action;
 
    switch (type) {
