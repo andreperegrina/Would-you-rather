@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/Would-you-rather/static/css/main.cccf065c.chunk.css",
-    "main.js": "/Would-you-rather/static/js/main.304bd145.chunk.js",
-    "main.js.map": "/Would-you-rather/static/js/main.304bd145.chunk.js.map",
+    "main.css": "/Would-you-rather/static/css/main.f5d373f1.chunk.css",
+    "main.js": "/Would-you-rather/static/js/main.b6343292.chunk.js",
+    "main.js.map": "/Would-you-rather/static/js/main.b6343292.chunk.js.map",
     "runtime-main.js": "/Would-you-rather/static/js/runtime-main.e47e8f94.js",
     "runtime-main.js.map": "/Would-you-rather/static/js/runtime-main.e47e8f94.js.map",
     "static/css/2.dfed16e3.chunk.css": "/Would-you-rather/static/css/2.dfed16e3.chunk.css",
-    "static/js/2.d5bbeea5.chunk.js": "/Would-you-rather/static/js/2.d5bbeea5.chunk.js",
-    "static/js/2.d5bbeea5.chunk.js.map": "/Would-you-rather/static/js/2.d5bbeea5.chunk.js.map",
+    "static/js/2.f19b2e3c.chunk.js": "/Would-you-rather/static/js/2.f19b2e3c.chunk.js",
+    "static/js/2.f19b2e3c.chunk.js.map": "/Would-you-rather/static/js/2.f19b2e3c.chunk.js.map",
     "index.html": "/Would-you-rather/index.html",
-    "precache-manifest.6ae72fe25445995f2fb97d276e03c39c.js": "/Would-you-rather/precache-manifest.6ae72fe25445995f2fb97d276e03c39c.js",
+    "precache-manifest.3fbf6397356e1437e4b50b815262af21.js": "/Would-you-rather/precache-manifest.3fbf6397356e1437e4b50b815262af21.js",
     "service-worker.js": "/Would-you-rather/service-worker.js",
     "static/css/2.dfed16e3.chunk.css.map": "/Would-you-rather/static/css/2.dfed16e3.chunk.css.map",
-    "static/css/main.cccf065c.chunk.css.map": "/Would-you-rather/static/css/main.cccf065c.chunk.css.map",
-    "static/js/2.d5bbeea5.chunk.js.LICENSE.txt": "/Would-you-rather/static/js/2.d5bbeea5.chunk.js.LICENSE.txt",
+    "static/css/main.f5d373f1.chunk.css.map": "/Would-you-rather/static/css/main.f5d373f1.chunk.css.map",
+    "static/js/2.f19b2e3c.chunk.js.LICENSE.txt": "/Would-you-rather/static/js/2.f19b2e3c.chunk.js.LICENSE.txt",
     "static/media/semantic.min.css": "/Would-you-rather/static/media/outline-icons.ef60a4f6.woff"
   },
   "entrypoints": [
     "static/js/runtime-main.e47e8f94.js",
     "static/css/2.dfed16e3.chunk.css",
-    "static/js/2.d5bbeea5.chunk.js",
-    "static/css/main.cccf065c.chunk.css",
-    "static/js/main.304bd145.chunk.js"
+    "static/js/2.f19b2e3c.chunk.js",
+    "static/css/main.f5d373f1.chunk.css",
+    "static/js/main.b6343292.chunk.js"
   ]
 }
