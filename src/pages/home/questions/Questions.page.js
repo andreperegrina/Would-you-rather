@@ -1,14 +1,22 @@
+// Libraries
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Container, Segment, Card, Form, Radio, Loader, Dimmer} from "semantic-ui-react";
 
-import {convertObjectToArray} from "../../../utils";
-import QuestionCard from "../../../components/question-card/QuestionCard";
-import {filterQuestions, orderQuestions} from "./Questions.util";
-
-import './Questions.css'
+// Actions
 import questionActions from "../../../actions/questions.action";
 
+// Components
+import QuestionCard from "../../../components/question-card/QuestionCard";
+
+// Utils
+import {filterQuestions, orderQuestions} from "./Questions.util";
+import {convertObjectToArray} from "../../../utils";
+
+// Style
+import './Questions.css'
+
+// All filter options available for the user
 const filterByOptions = [{
    key: 'unanswered',
    value: 'unanswered',
@@ -34,6 +42,8 @@ class QuestionsPage extends Component {
    render() {
       const {filterBy} = this.state;
       const {questions, users, authenticatedUserId, isFetching} = this.props;
+      // Convert the questions to an array, filter the questions by user input and ordered by date of creation before
+      // being show in the ui
       const questionList = orderQuestions(filterQuestions(convertObjectToArray(questions), filterBy, authenticatedUserId));
       return (
          <Container className='QuestionsPage'>

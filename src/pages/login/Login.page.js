@@ -1,26 +1,37 @@
+// Libraries
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {Button, Card, Dropdown, Form} from "semantic-ui-react";
 
-import './Login.css'
+// Actions
+import authenticationActions from "../../actions/authentication.action";
 
 // Utils
-import authenticationActions from "../../actions/authentication.action";
+import {convertUsersToOptions} from "./Login.util";
+
+// Style
+import './Login.css'
 
 class LoginPage extends Component {
    state = {
-      userId: undefined
+      userId: undefined // This variable of the state will hold the user selected account
    };
 
+   // This function will update the state when the user selected an account to login in
    handleUserChange = (e, data) => this.setState({userId: data.value});
 
+   // This function will handle when the user click on the sign in button
    handleClickSignIn = () => {
       const {userId} = this.state;
       const {users} = this.props;
       if (users[userId]) {
+         // If is a valid user it will authenticated the user with that account
          this.props.authenticate(userId);
 
+         // In case of the user attempt to access a private route before this code will redirect the user to the
+         // route that try to access the first time
          const {location} = this.props;
+         // This information was handle before in the PrivateRoute.js file
          if(location.state && location.state.from) {
             this.props.history.push(location.state.from);
          }
@@ -30,10 +41,8 @@ class LoginPage extends Component {
 
    render() {
       const {users} = this.props;
-      const userOptions = Object.keys(users).map((key) => ({
-         key: users[key].id, value: users[key].id, text: users[key].name,
-         image: {avatar: true, src: users[key].avatarURL},
-      }));
+      // Convert all the users into a option array
+      const userOptions = convertUsersToOptions(users);
       return (
          <div className='Login'>
             <Card>

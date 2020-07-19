@@ -1,9 +1,20 @@
-import {Card, Header, Label, Progress} from "semantic-ui-react";
+// Libraries
 import React from "react";
+import {Card, Header, Label, Progress} from "semantic-ui-react";
 
-
+/**
+ * @description Calculate the percentage of votes of this answer based on the total of votes
+ * @param {number} total
+ * @param {number} votes
+ * @returns {number} Return the percentage of this answer
+ */
 const calculatePercentage = (total, votes) => Math.round(votes / total * 100);
 
+/**
+ * @description This function return a funny easter egg of the fans of Re-zero
+ * @param {string} text
+ * @returns {string} Return a string depending if the user type the correct answers in the option one and two
+ */
 const easterEgg = (text = '') => {
    switch (text.toLowerCase()) {
       case 'rem':
@@ -18,6 +29,7 @@ const easterEgg = (text = '') => {
 const VoteCard = ({item, isSelected, isAnswered, totalVotes, onAnswerSelected, value}) => {
    const {votes, text} = item;
    const numberVotes = votes ? votes.length : 0;
+   // if the user already answer this question, it will not allow the user to click in this option
    const handleAnswerSelected = !isAnswered ? () => onAnswerSelected(value) : undefined;
 
    return (

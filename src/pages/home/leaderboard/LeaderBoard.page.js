@@ -1,14 +1,19 @@
+// Libraries
 import React, {Component} from 'react';
-import {convertObjectToArray} from "../../../utils";
 import {connect} from "react-redux";
-import LeaderBoardCard from "./components/leader-board-card/LeaderBoardCard";
 import {Card, Container, Segment} from "semantic-ui-react";
-import {generateAndOrderByScore} from "./LeaderBoard.util";
 
+// Components
+import LeaderBoardCard from "./components/leader-board-card/LeaderBoardCard";
+
+// Utils
+import {convertObjectToArray} from "../../../utils";
+import {generateAndOrderByScore} from "./LeaderBoard.util";
 
 class LeaderBoardPage extends Component {
    render() {
       const {users = {}} = this.props;
+      // Convert users to array and created a new user list that contains the score of the user and it's sorted by the score
       const userList = generateAndOrderByScore(convertObjectToArray(users));
       return (
          <Container>

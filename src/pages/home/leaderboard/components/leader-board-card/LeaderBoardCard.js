@@ -1,9 +1,16 @@
+// Libraries
 import React from 'react';
 import PropTypes from 'prop-types';
 import {Card, Grid, Header, Image, Label, Segment, Statistic} from "semantic-ui-react";
 
+// Style
 import './LeaderBoardCard.css'
 
+/**
+ * @description Based on the place return a color representing the number of the place
+ * @param {number} place
+ * @returns {string} Returns a color that represents the place passed
+ */
 const colorFromPlace = (place) => {
    switch (place) {
       case 1:
@@ -21,7 +28,9 @@ const LeaderBoardCard = (props) => {
    const {item, place} = props;
    const {avatarURL, score} = item;
 
+   // Get the number of answers
    const answersCount = Object.keys(item.answers || {}).length;
+   // Get the number of questions created
    const questionsCount = item.questions ? item.questions.length : 0;
    return (
       <Card className='LeaderBoardCard' fluid>

@@ -1,27 +1,26 @@
+// Libraries
 import React, {Component} from 'react';
 import {Container, Segment} from "semantic-ui-react";
 import {connect} from "react-redux";
-
-import QuestionCard from "../../../components/question-card/QuestionCard";
-
-import questionActions from "../../../actions/questions.action";
-import {isEmptyObject} from "../../../utils";
 import {Redirect} from "react-router-dom";
 
-class QuestionDetailPage extends Component {
-   componentDidMount = () => {
-      const {match} = this.props;
-      if (match != null) {
-         const {id} = match;
-         this.setState({id})
-      }
-   };
+// Actions
+import questionActions from "../../../actions/questions.action";
 
+// Components
+import QuestionCard from "../../../components/question-card/QuestionCard";
+
+// Utils
+import {isEmptyObject} from "../../../utils";
+
+class QuestionDetailPage extends Component {
+   // This function handle when the user click on a answer
    handleAnswerSelected = (answer) => {
       const id = this.getQuestionId();
       this.props.setAnswer(id, answer)
    };
 
+   // This function handle when the user click on the back button
    handleBack = () => {
       this.props.history.push('/');
    };
@@ -51,11 +50,6 @@ class QuestionDetailPage extends Component {
                                 onClickBack={this.handleBack} isLoading={isFetching}
                                 onAnswerSelected={this.handleAnswerSelected}/>
                )}
-               {/*{questionNotFound && <Segment>*/}
-               {/*   <Header>Question not found</Header>*/}
-               {/*   <div>Please go back to the <Link to='/'>Home page</Link></div>*/}
-               {/*</Segment>}*/}
-
                {questionNotFound && <Redirect to='/404'/>}
             </Segment>
          </Container>

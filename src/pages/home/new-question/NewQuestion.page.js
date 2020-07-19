@@ -1,3 +1,4 @@
+// Libraries
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {
@@ -14,6 +15,7 @@ import {
    Button
 } from "semantic-ui-react";
 
+// Actions
 import questionActions from "../../../actions/questions.action";
 
 
@@ -24,6 +26,7 @@ class NewQuestionPage extends Component {
       enableValidation: false,
    };
 
+   // This code will handle when the user created a new question
    handleSubmit = (e) => {
       e.preventDefault();
       const {optionOne, optionTwo} = this.state;

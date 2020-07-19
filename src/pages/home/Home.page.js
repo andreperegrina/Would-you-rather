@@ -1,26 +1,32 @@
+// Libraries
 import React, {Component} from 'react';
 import {Route} from "react-router-dom";
 import {connect} from "react-redux";
 
-// Components
+// Actions
+import questionActions from "../../actions/questions.action";
+import authenticationActions from "../../actions/authentication.action";
+
+// Pages
 import NewQuestionPage from './new-question/NewQuestion.page';
 import LeaderBoardPage from './leaderboard/LeaderBoard.page';
 import QuestionsPage from './questions/Questions.page';
 import QuestionsDetailPage from './question-detail/QuestionDetail.page';
-import Header from "../../components/header/Header";
-import questionActions from "../../actions/questions.action";
-import authenticationActions from "../../actions/authentication.action";
 import QuestionNotFoundPage from "./question-not-found/QuestionNotFound.page";
+
+// Components
+import Header from "../../components/header/Header";
 
 class HomePage extends Component {
    componentDidMount() {
       this.props.loadQuestions();
    }
 
+   // This function handle when the user selected an option from the header
    handleChangeRoute = (route) => this.props.history.push(route);
-   handleLogout = () => {
-      this.props.logout();
-   };
+
+   // This function handle all logic when the user click the log out button
+   handleLogout = () => this.props.logout();
 
    render() {
       const {location = {}, userAuthenticated} = this.props;

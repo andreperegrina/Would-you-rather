@@ -1,15 +1,18 @@
+// Libraries
 import React from 'react';
 import {Dropdown, Image, Menu} from "semantic-ui-react";
 import PropTypes from "prop-types";
 
 const Header = ({onClickItem, onClickLogout, active, user = {}}) => {
 
+   // This function will handle when the user click on a menu item
    const handleItemClick = (route) => {
       if (onClickItem) {
          onClickItem(route);
       }
    };
 
+   // This function will handle when the user click on the log out button
    const handleItemClickLogOut = () => {
       if (onClickLogout) {
          onClickLogout();

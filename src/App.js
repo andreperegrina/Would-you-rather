@@ -1,17 +1,21 @@
+// Libraries
 import React, {Component} from 'react';
 import {connect} from "react-redux";
 import {BrowserRouter, Switch} from "react-router-dom";
 
-import './App.css';
-import userActions from "./actions/users.action";
-import LoginPage from "./pages/login/Login.page";
-import PrivateRoute from "./routers/PrivateRoute";
-import HomePage from "./pages/home/Home.page";
+// Custom routes
 import PublicRoute from "./routers/PublicRoute";
+import PrivateRoute from "./routers/PrivateRoute";
 
+// Pages
+import LoginPage from "./pages/login/Login.page";
+import HomePage from "./pages/home/Home.page";
 
+// Actions
+import userActions from "./actions/users.action";
 
-
+// Style
+import './App.css';
 
 class App extends Component {
    componentDidMount() {

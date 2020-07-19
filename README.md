@@ -1,3 +1,35 @@
+# Project
+
+A poll application of the popular game **Would you rater?** 
+
+## Project structure
+
+```
+Project structure
+src
+├── actions -- Folder that contains all actions used thorught all the routes
+├── components -- Folder that contains all shareable components thorught all the routes 
+├── pages -- Folder that contains all the route pages of the application
+├── reducer -- Folder that contains all reducers used thorught all the routes
+├── routers -- Folder that contains the logic for the private and public routes 
+├── utils -- Folder that contains shared logic and services like API for the whole application 
+└── store -- File that centralize and store all the data used thorught all the routes
+
+Pages structure
+route
+├── sub-route -- This folder contains all the subpages from the route, using the same structure as the Page structure
+├── components -- This folder contains all the components used in this route
+├── route.util.js -- This files containt logic functions util for the route
+├── route.css -- This files contain the style of the route
+└── route.page.js -- This files contain the route code for the page
+```
+
+## Redux Store
+
+Must part of the project I'll try to create isolated components that doesn't require the used of redux, in this way 
+I can re-used this components in another routes. That's why I let almost all of the redux information being handle 
+by the **.page.js** files. 
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

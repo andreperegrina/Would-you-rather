@@ -1,22 +1,28 @@
+// Libraries
 import React from 'react';
 import {Button, Card, Dimmer, Divider, Feed, Grid, Header, Icon, Loader, Segment} from "semantic-ui-react";
 import PropTypes from "prop-types";
-
-import './QuestionCard.css'
-import VoteCard from "./components/vote-card/VoteCard";
 import moment from "moment";
 
-const square = {width: 100, height: 100, top: -50};
+// Components
+import VoteCard from "./components/vote-card/VoteCard";
 
+// Style
+import './QuestionCard.css'
+const square = {width: 100, height: 100, top: -50};
 
 const QuestionCard = (props) => {
    const {user = {}, question = {}, author = {}, fluid, isAnswerMode, onAnswerSelected, isLoading = false, onClickBack} = props;
    const {onOpenQuestion} = props;
+
+   // This function will handle when the user click in open the poll question
    const handleOpenQuestion = () => {
       if (onOpenQuestion) {
          onOpenQuestion(question.id);
       }
    };
+
+   // This function will handle when the user click on one of the options available
    const handleAnswerSelected = (answered) => {
       if (answer == null && onAnswerSelected) {
          onAnswerSelected(answered);
@@ -26,11 +32,13 @@ const QuestionCard = (props) => {
    const {optionOne = {}, optionTwo = {}} = question;
 
    let answer;
+   // Search if the user already answer this question
    if (user.answers) {
       answer = user.answers[question.id];
    }
 
    let totalVotes = 0;
+   // Calculate the total of votes that the question has
    if (optionOne && optionOne.votes) {
       totalVotes += optionOne.votes.length;
    }
