@@ -2,6 +2,8 @@
 
 A poll application of the popular game **Would you rater?** 
 
+**Demo:** https://andreperegrina.github.io/Would-you-rather/login
+
 ## Project structure
 
 ```
